@@ -85,8 +85,8 @@ Function FirewallAdd
                 $FWRName = get-childitem -Path $scriptPath -Recurse -Include *.exe| where {! $_.PSIsContainer}
                 foreach ( $FWRName1 in $FWRName)
                 {
-                    New-NetFirewallRule -DisplayName $FWRName1.Name -Action Block -Direction Outbound -Program $FWRName1 -ErrorAction SilentlyContinue -InformationAction SilentlyContinue
-                    New-NetFirewallRule -DisplayName $FWRName1.Name -Action Block -Direction Inbound -Program $FWRName1 -ErrorAction SilentlyContinue -InformationAction SilentlyContinue
+                    New-NetFirewallRule -DisplayName $FWRName1.Name -Description $pwd -Action Block -Direction Outbound -Program $FWRName1 -ErrorAction SilentlyContinue -InformationAction SilentlyContinue
+                    New-NetFirewallRule -DisplayName $FWRName1.Name -Description $pwd -Action Block -Direction Inbound -Program $FWRName1 -ErrorAction SilentlyContinue -InformationAction SilentlyContinue
                     write-host "...."
                 }
             write-host "-------------------------------"  
