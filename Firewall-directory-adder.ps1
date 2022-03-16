@@ -20,8 +20,6 @@ function Main-Menu
     Clear-Host
     Write-Host "================ $Title ================"
     write-host "Current Working Dir $pwd"
-    $variable = Get-Variable FCW -ValueOnly
-    Write-Host "FCW $variable"
     Write-Host "1: Just a Menu that does nothing"
     Write-Host "2: FirewallCheck."
     Write-Host "3: FirewallRemove"
